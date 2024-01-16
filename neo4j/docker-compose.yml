@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j
+    restart: always
+
+    environment:
+      NEO4J_AUTH: neo4j/Admin123
+
+    volumes:
+      - ./data:/data
+      - ./logs:/logs
+
+    ports:
+      - 7474:7474
+      - 7687:7687

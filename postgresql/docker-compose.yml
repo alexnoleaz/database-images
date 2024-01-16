@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgresql:
+    image: postgres
+    restart: always
+
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Admin123
+
+    volumes:
+      - ./data:/var/lib/postgresql/data
+      - ./logs:/var/log/postgresql
+
+    ports:
+      - 5432:5432
